@@ -11,11 +11,7 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.config({
-    extends: [
-      "next/core-web-vitals",
-      "next/typescript",
-      "plugin:prettier/recommended",
-    ],
+    extends: ["next/core-web-vitals", "next/typescript"],
     plugins: ["check-file", "n"],
     rules: {
       "prefer-arrow-callback": ["error"],
