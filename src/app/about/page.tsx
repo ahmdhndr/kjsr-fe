@@ -1,6 +1,6 @@
 import HeartAnimation from "@/components/heart-animation";
 
-export default function Home() {
+export default function AboutPage() {
   return (
     <div className="mx-auto flex h-full w-full items-center justify-center">
       <div className="prose mx-auto dark:prose-invert">
@@ -11,7 +11,7 @@ export default function Home() {
           <h1 className="my-0 text-5xl font-extrabold uppercase tracking-tight text-primary md:text-7xl">
             Coming soon
           </h1>
-          <h2 className="my-0 self-center text-xl font-semibold uppercase text-destructive md:self-end md:text-2xl">
+          <h2 className="my-0 self-end text-xl font-semibold uppercase text-destructive md:text-2xl">
             Under Construction
           </h2>
           <div className="h-0.5 w-full bg-destructive" />
