@@ -62,9 +62,9 @@ export default function RootLayout({
       <body
         className={`${jakartaSans.variable} ${geistMono.variable} h-full w-full antialiased`}
       >
-        <div className="relative flex h-screen w-screen flex-col">
+        <div className="relative flex h-screen flex-col">
           <Navbar />
-          <main className="container flex-grow">{children}</main>
+          <main className="container flex-1">{children}</main>
           <Footer />
         </div>
       </body>
