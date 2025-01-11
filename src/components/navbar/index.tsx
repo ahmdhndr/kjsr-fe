@@ -27,8 +27,8 @@ export function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full border-b bg-primary/95 backdrop-blur supports-[backdrop-filter]:bg-primary/60">
-        <div className="container-wrapper bg-primary">
+      <header className="sticky top-0 z-50 w-full border-b bg-background/95 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="container-wrapper">
           <div className="container flex h-14 items-center">
             <div className="mr-4 hidden md:flex">
               <BrandLogo />
@@ -44,10 +44,10 @@ export function Navbar() {
                     <a
                       href={item.href}
                       className={cn(
-                        "font-medium transition-colors hover:text-background",
+                        "font-medium text-primary transition-colors",
                         item.href === pathname
-                          ? "font-semibold text-background"
-                          : "text-background/80"
+                          ? "font-semibold text-primary"
+                          : "text-primary/80"
                       )}
                     >
                       {item.name}
@@ -61,7 +61,7 @@ export function Navbar() {
               className="mr-2 px-0 py-2 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
               onClick={onClickMenuMobile}
             >
-              <Menu className="text-background" />
+              <Menu className="text-primary" />
               <span className="sr-only">Toggle Menu</span>
             </Button>
             {/* <BrandLogo className="md:hidden" /> */}

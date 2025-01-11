@@ -51,7 +51,7 @@ export default function HeartAnimation() {
             duration: 1.5,
             repeat: Infinity,
             repeatType: "loop",
-            ease: "easeInOut",
+            ease: "linear",
           }}
         />
       </svg>
