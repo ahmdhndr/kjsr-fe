@@ -15,10 +15,7 @@ export default function BrandLogo({
   return (
     <Link
       href={"/"}
-      className={cn(
-        "mr-4 flex items-center gap-2 font-sans lg:mr-6",
-        className
-      )}
+      className={cn("mr-4 flex items-center gap-2 lg:mr-6", className)}
     >
       <Image
         src={"/logo-bg-transparan.png"}

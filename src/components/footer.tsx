@@ -1,27 +1,34 @@
 import Link from "next/link";
 
+import { cn } from "@/lib/utils";
+
 import BrandLogo from "./brand-logo";
 import InstagramIcon from "./icons/instagram";
 import YoutubeIcon from "./icons/youtube";
 
-export default function Footer() {
+export default function Footer({ className = "" }: { className?: string }) {
   return (
-    <footer className="border-primary-100 container border-t py-4 font-sans text-primary">
+    <footer
+      className={cn(
+        "border-primary-100 container border-t py-4 font-sans text-primary",
+        className
+      )}
+    >
       <div className="mx-auto grid grid-cols-12 items-start gap-4 md:grid-cols-3">
         <div className="col-span-full flex flex-col items-center gap-2 md:col-span-2 md:flex-row">
           <BrandLogo size={120} onFooter />
           <div>
             <h4 className="text-xl font-bold">Informasi Kontak:</h4>
-            <p>
+            <p className="text-balance">
               Jl. Teuku Umar No.8, RT.1/RW.1, Gondangdia, Kec. Menteng, Kota
               Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10350
             </p>
             <p>021-3909176</p>
           </div>
         </div>
-        <div className="col-span-full mt-3 md:col-span-1 md:mt-0">
+        <div className="col-span-full mt-3 space-y-2 justify-self-start md:col-span-1 md:mt-0 md:justify-self-end">
           <h4 className="text-xl font-bold">Ikuti kami di Media Sosial!</h4>
-          <div className="mt-4 flex items-center gap-2">
+          <div className="flex items-center gap-2">
             <Link
               href={"https://www.instagram.com/kjsrindonesia"}
               passHref

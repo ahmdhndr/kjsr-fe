@@ -1,26 +1,43 @@
-import HeartAnimation from "@/components/heart-animation";
+import BannerImage from "@/components/banner-image";
+import { Separator } from "@/components/ui/separator";
+
+import EventList from "./events/components/event-list";
 
 export default function Home() {
   return (
-    <div className="mx-auto flex h-full w-full items-center justify-center">
-      <div className="prose mx-auto dark:prose-invert">
-        <div className="relative">
-          <HeartAnimation />
-        </div>
-        <div className="flex flex-col items-center text-center">
-          <h1 className="my-0 text-5xl font-extrabold uppercase tracking-tight text-primary md:text-7xl">
-            Coming soon
-          </h1>
-          <h2 className="my-0 self-center text-xl font-semibold uppercase text-destructive md:self-end md:text-2xl">
-            Under Construction
-          </h2>
-          <div className="h-0.5 w-full bg-destructive" />
-          <p className="w-full max-w-96 text-balance text-sm tracking-normal md:text-base">
-            Our website is under development, lots of ideas are already in our
-            heads! We are preparing something amazing and exciting for you.
+    <div className="space-y-4">
+      <section className="grid h-full grid-cols-2 items-center gap-4">
+        <div className="col-span-full flex h-full flex-col justify-center md:col-span-1">
+          <div className="mb-4">
+            <h1 className="text-balance text-lg font-semibold md:text-xl">
+              Klub Jantung Sehat Remaja Indonesia
+            </h1>
+            <h2 className="text-balance text-3xl font-bold tracking-tight md:text-5xl">
+              We Are The Future!
+            </h2>
+          </div>
+          <p className="font-semibold">Salam Remaja!</p>
+          <p className="text-balance">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+            vel consectetur ipsam ratione ea sed distinctio? Earum labore,
+            magnam soluta repellendus eaque ad recusandae, quo doloribus, alias
+            vero ratione dolorem dolore eligendi. Vel, cupiditate eligendi.
           </p>
         </div>
-      </div>
+        <div className="col-span-full md:col-span-1">
+          <BannerImage />
+        </div>
+      </section>
+
+      <section>
+        <div className="w-fit space-y-1">
+          <h3 className="text-lg font-semibold capitalize md:text-2xl">
+            Upcoming events
+          </h3>
+          <Separator className="h-0.5 bg-primary" />
+        </div>
+        <EventList />
+      </section>
     </div>
   );
 }
