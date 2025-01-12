@@ -2,44 +2,50 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
+import { Menu } from "lucide-react";
 
 import {
-  Drawer,
-  DrawerContent,
-  DrawerDescription,
-  DrawerHeader,
-  DrawerTitle,
-} from "@/components/ui/drawer";
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { menus } from "@/data/menus";
 import { cn } from "@/lib/utils";
 
-interface NavbarMobileProps {
-  open: boolean;
-  onOpenChangeAction: () => void;
-}
-
-export default function NavbarMobile({
-  open,
-  onOpenChangeAction,
-}: NavbarMobileProps) {
+export default function NavbarMobile() {
+  const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
+  const handleLinkClick = () => {
+    setIsOpen(false); // Close the sheet when a link is clicked
+  };
+
   return (
-    <Drawer open={open} onOpenChange={onOpenChangeAction}>
-      <DrawerContent>
+    <Sheet open={isOpen} onOpenChange={setIsOpen}>
+      <SheetTrigger className="md:hidden">
+        <Menu className="text-primary" />
+      </SheetTrigger>
+      <SheetContent>
         <VisuallyHidden.Root>
-          <DrawerHeader className="text-left">
-            <DrawerTitle>Menus</DrawerTitle>
-            <DrawerDescription></DrawerDescription>
-          </DrawerHeader>
+          <SheetHeader>
+            <SheetTitle>Are you absolutely sure?</SheetTitle>
+            <SheetDescription>
+              This action cannot be undone. This will permanently delete your
+              account and remove your data from our servers.
+            </SheetDescription>
+          </SheetHeader>
         </VisuallyHidden.Root>
         {menus.map((item) => (
-          <div className="container flex flex-col p-2" key={item.name}>
+          <div className="flex flex-col p-2" key={item.name}>
             <Link href={item.href} passHref legacyBehavior>
               <a
-                onClick={() => onOpenChangeAction()}
+                onClick={handleLinkClick}
                 href={item.href}
                 className={cn(
                   "font-medium transition-colors hover:text-foreground",
@@ -53,7 +59,7 @@ export default function NavbarMobile({
             </Link>
           </div>
         ))}
-      </DrawerContent>
-    </Drawer>
+      </SheetContent>
+    </Sheet>
   );
 }

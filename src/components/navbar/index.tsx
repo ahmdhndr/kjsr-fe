@@ -2,12 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
-
-import { Menu } from "lucide-react";
 
 import BrandLogo from "@/components/brand-logo";
-import { Button } from "@/components/ui/button";
 import { menus } from "@/data/menus";
 import { cn } from "@/lib/utils";
 
@@ -15,21 +11,13 @@ import NavbarMobile from "./navbar-mobile";
 
 export function Navbar() {
   const pathname = usePathname();
-  const [openMenuMobile, setOpenMenuMobile] = React.useState(false);
-
-  // const onClickLogin = () => {
-  //   console.log("login");
-  // };
-
-  const onClickMenuMobile = () => {
-    setOpenMenuMobile(true);
-  };
 
   return (
     <>
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container-wrapper">
-          <div className="container flex h-14 items-center">
+          <div className="container flex h-14 items-center gap-2">
+            <NavbarMobile />
             <div className="mr-4 hidden md:flex">
               <BrandLogo />
 
@@ -44,7 +32,7 @@ export function Navbar() {
                     <a
                       href={item.href}
                       className={cn(
-                        "font-medium text-primary transition-colors",
+                        "font-medium text-primary/90 transition-colors hover:text-primary",
                         item.href === pathname
                           ? "font-semibold text-primary"
                           : "text-primary/80"
@@ -56,15 +44,6 @@ export function Navbar() {
                 ))}
               </nav>
             </div>
-            <Button
-              variant={"ghost"}
-              className="mr-2 px-0 py-2 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
-              onClick={onClickMenuMobile}
-            >
-              <Menu className="text-primary" />
-              <span className="sr-only">Toggle Menu</span>
-            </Button>
-            {/* <BrandLogo className="md:hidden" /> */}
             <div className="flex flex-1 items-center justify-between gap-2 md:justify-end">
               <div className="block md:hidden">
                 <BrandLogo />
@@ -82,11 +61,6 @@ export function Navbar() {
           </div>
         </div>
       </header>
-
-      <NavbarMobile
-        open={openMenuMobile}
-        onOpenChangeAction={() => setOpenMenuMobile(false)}
-      />
     </>
   );
 }

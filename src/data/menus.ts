@@ -7,4 +7,16 @@ export const menus: { name: string; href: string }[] = [
     name: "About",
     href: "/about",
   },
+  {
+    name: "Events",
+    href: "/events",
+  },
+  {
+    name: "Programs",
+    href: "/programs",
+  },
+  {
+    name: "Articles",
+    href: "/articles",
+  },
 ];

@@ -1,12 +1,18 @@
 import * as motion from "motion/react-client";
 
-export default function HeartAnimation() {
+export default function HeartAnimation({
+  width = 250,
+  height = 100,
+}: {
+  width?: number;
+  height?: number;
+}) {
   return (
     <div className="flex items-center justify-center">
       <svg
         viewBox="0 0 250 100"
-        width="250"
-        height="100"
+        width={width}
+        height={height}
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -26,6 +32,9 @@ export default function HeartAnimation() {
           "
           stroke="rgba(29, 54, 88, 0.3)" /* Warna placeholder merah kabur */
           strokeWidth="4"
+          strokeLinejoin={"round"}
+          strokeMiterlimit={8}
+          strokeLinecap={"round"}
         />
 
         {/* Garis animasi: Warna merah solid bergerak */}
@@ -43,12 +52,15 @@ export default function HeartAnimation() {
             H250
           "
           stroke="#1d3658" /* Warna merah solid */
-          strokeWidth="4"
+          strokeWidth="0"
           strokeDasharray="100 300" /* Panjang solid dan kosong */
-          strokeDashoffset="300"
-          animate={{ strokeDashoffset: -100 }}
+          strokeDashoffset="0"
+          strokeLinejoin={"round"}
+          strokeMiterlimit={8}
+          strokeLinecap={"round"}
+          animate={{ strokeDashoffset: -400, strokeWidth: "4" }}
           transition={{
-            duration: 1.5,
+            duration: 1,
             repeat: Infinity,
             repeatType: "loop",
             ease: "linear",
