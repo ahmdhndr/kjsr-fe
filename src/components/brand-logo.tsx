@@ -25,9 +25,7 @@ export default function BrandLogo({
         priority
       />
       {onFooter ? null : (
-        <span className="hidden font-bold text-primary lg:inline-block">
-          KJSR Indonesia
-        </span>
+        <span className="font-bold text-primary">KJSR Indonesia</span>
       )}
     </Link>
   );

@@ -4,7 +4,7 @@ import { blurDataURL } from "@/data/blur-data-image-url";
 
 export default function BannerImage() {
   return (
-    <div className="grid grid-cols-7 gap-2">
+    <div className="grid grid-cols-7 gap-1">
       {/* Row 1 */}
       <div className="aspect-square overflow-hidden rounded-md"></div>
       <div className="aspect-square overflow-hidden rounded-md">
