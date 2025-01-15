@@ -27,6 +27,29 @@ export const metadata: Metadata = {
     default: siteConfig.title,
     template: `%s | ${siteConfig.title}`,
   },
+  keywords: [
+    "Yayasan Jantung Indonesia",
+    "Klub Jantung Sehat",
+    "Klub Jantung Sehat Remaja",
+    "Klub Jantung Remaja",
+    "YJI",
+    "KJS",
+    "KJSR",
+    "KJR",
+    "SEHAT",
+    "yayasan jantung indonesia",
+    "klub jantung sehat",
+    "klub jantung sehat remaja",
+    "klub rantung remaja",
+    "sehat",
+    "jantung sehat",
+    "yji",
+    "kjs",
+    "kjsr",
+    "kjr",
+    "sehat",
+    "remaja",
+  ],
   description: siteConfig.description,
   robots: { index: true, follow: true },
   icons: {
@@ -57,14 +80,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${jakartaSans.variable} ${geistMono.variable} mx-auto h-full w-full max-w-[1200px] antialiased`}
+        className={`${jakartaSans.variable} ${geistMono.variable} antialiased`}
       >
         <Suspense fallback={<Loader />}>
           <div className="flex min-h-screen flex-col">
             <Navbar />
-            <main className="container relative flex-1 py-4 font-sans !text-primary">
-              {children}
-            </main>
+            <section className="container relative mb-4 flex-1 font-sans !text-primary">
+              <main className="mx-auto w-full max-w-[1200px] selection:bg-primary selection:text-background">
+                {children}
+              </main>
+            </section>
             <Footer />
           </div>
         </Suspense>

@@ -12,14 +12,7 @@ import {
 import { blurDataURL } from "@/data/blur-data-image-url";
 import { getTimeDifference } from "@/lib/get-time-difference";
 
-interface Props {
-  title: string;
-  excerpt: string;
-  author: string;
-  imageUrl: string;
-  category: string;
-  events_date: Date;
-}
+import { EventDTO } from "../dtos/events";
 
 export function EventItem({
   title,
@@ -28,7 +21,7 @@ export function EventItem({
   imageUrl,
   category,
   events_date,
-}: Props) {
+}: EventDTO) {
   return (
     <Card className="overflow-hidden text-primary shadow-lg">
       <CardHeader className="p-0">
@@ -55,9 +48,7 @@ export function EventItem({
         </div>
       </CardHeader>
       <CardContent className="px-4 pb-4">
-        <p className="line-clamp-3 max-h-20 overflow-hidden text-balance">
-          {excerpt}
-        </p>
+        <p className="line-clamp-3 text-balance">{excerpt}</p>
       </CardContent>
       <CardFooter className="flex justify-between px-4 pb-4 pt-0 text-sm">
         <p className="capitalize">{category}</p>

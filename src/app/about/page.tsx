@@ -1,6 +1,6 @@
 export default function AboutPage() {
   return (
-    <div className="prose mx-auto text-primary md:prose-lg">
+    <div className="prose mx-auto max-w-full text-primary lg:prose-lg">
       <h3 className="text-center text-primary">Tentang</h3>
       <p className="!mb-0">Apa kabar Remaja Indonesia?</p>
       <p className="!mt-0 italic">Baik, Sehat, Semangat, Hebat!!!</p>
