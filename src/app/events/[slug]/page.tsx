@@ -22,7 +22,7 @@ export default function EventDetailPage() {
           height={630}
           placeholder="blur"
           blurDataURL={blurDataURL}
-          className="aspect-auto h-32 object-cover object-center md:h-52 lg:h-80"
+          className="h-32 w-full object-cover object-center md:h-52 lg:h-80"
         />
         <div className="absolute left-0 top-0 h-full w-full bg-primary/85"></div>
       </div>
