@@ -9,11 +9,11 @@ export default function BannerImage() {
       <div className="aspect-square overflow-hidden rounded-md"></div>
       <div className="aspect-square overflow-hidden rounded-md">
         <Image
-          src={"/images/banner/banner-3.jpg"}
+          src={"/images/banner/banner-19.jpg"}
           alt="Logo"
-          width={80}
-          height={80}
-          quality={80}
+          width={200}
+          height={200}
+          quality={90}
           className="h-full object-cover object-center"
           placeholder="blur"
           blurDataURL={blurDataURL}
@@ -23,9 +23,9 @@ export default function BannerImage() {
         <Image
           src={"/images/banner/banner-4.jpg"}
           alt="Logo"
-          width={80}
-          height={80}
-          quality={80}
+          width={200}
+          height={200}
+          quality={90}
           className="h-full object-cover object-center"
           placeholder="blur"
           blurDataURL={blurDataURL}
@@ -36,9 +36,9 @@ export default function BannerImage() {
         <Image
           src={"/images/banner/banner-1.jpg"}
           alt="Logo"
-          width={80}
-          height={80}
-          quality={80}
+          width={200}
+          height={200}
+          quality={90}
           className="h-full object-cover object-center"
           placeholder="blur"
           blurDataURL={blurDataURL}
@@ -48,9 +48,9 @@ export default function BannerImage() {
         <Image
           src={"/images/banner/banner-6.jpg"}
           alt="Logo"
-          width={80}
-          height={80}
-          quality={80}
+          width={200}
+          height={200}
+          quality={90}
           className="h-full object-cover object-center"
           placeholder="blur"
           blurDataURL={blurDataURL}
@@ -63,9 +63,9 @@ export default function BannerImage() {
         <Image
           src={"/images/banner/banner-7.jpg"}
           alt="Logo"
-          width={80}
-          height={80}
-          quality={80}
+          width={200}
+          height={200}
+          quality={90}
           className="h-full object-cover object-center"
           placeholder="blur"
           blurDataURL={blurDataURL}
@@ -75,9 +75,9 @@ export default function BannerImage() {
         <Image
           src={"/images/banner/banner-5.jpg"}
           alt="Banner 1"
-          width={1280}
-          height={720}
-          quality={80}
+          width={1920}
+          height={1080}
+          quality={90}
           className="h-full object-cover object-center"
           placeholder="blur"
           blurDataURL={blurDataURL}
@@ -87,9 +87,9 @@ export default function BannerImage() {
         <Image
           src={"/images/banner/banner-8.jpg"}
           alt="Logo"
-          width={80}
-          height={80}
-          quality={80}
+          width={200}
+          height={200}
+          quality={90}
           className="h-full object-cover object-center"
           placeholder="blur"
           blurDataURL={blurDataURL}
@@ -101,9 +101,9 @@ export default function BannerImage() {
         <Image
           src={"/images/banner/banner-9.jpg"}
           alt="Logo"
-          width={80}
-          height={80}
-          quality={80}
+          width={200}
+          height={200}
+          quality={90}
           className="h-full object-cover object-center"
           placeholder="blur"
           blurDataURL={blurDataURL}
@@ -115,9 +115,9 @@ export default function BannerImage() {
         <Image
           src={"/images/banner/banner-10.jpg"}
           alt="Logo"
-          width={80}
-          height={80}
-          quality={80}
+          width={200}
+          height={200}
+          quality={90}
           className="h-full object-cover object-center"
           placeholder="blur"
           blurDataURL={blurDataURL}
@@ -133,9 +133,9 @@ export default function BannerImage() {
         <Image
           src={"/images/banner/banner-11.jpg"}
           alt="Logo"
-          width={80}
-          height={80}
-          quality={80}
+          width={200}
+          height={200}
+          quality={90}
           className="h-full object-cover object-center"
           placeholder="blur"
           blurDataURL={blurDataURL}
@@ -145,9 +145,9 @@ export default function BannerImage() {
         <Image
           src={"/images/banner/banner-12.jpg"}
           alt="Logo"
-          width={80}
-          height={80}
-          quality={80}
+          width={200}
+          height={200}
+          quality={90}
           className="h-full object-cover object-center"
           placeholder="blur"
           blurDataURL={blurDataURL}
@@ -157,9 +157,9 @@ export default function BannerImage() {
         <Image
           src={"/images/banner/banner-13.jpg"}
           alt="Logo"
-          width={80}
-          height={80}
-          quality={80}
+          width={200}
+          height={200}
+          quality={90}
           className="h-full object-cover object-center"
           placeholder="blur"
           blurDataURL={blurDataURL}
@@ -176,9 +176,9 @@ export default function BannerImage() {
         <Image
           src={"/images/banner/banner-14.jpg"}
           alt="Logo"
-          width={80}
-          height={80}
-          quality={80}
+          width={200}
+          height={200}
+          quality={90}
           className="h-full object-cover object-center"
           placeholder="blur"
           blurDataURL={blurDataURL}

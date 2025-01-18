@@ -5,16 +5,18 @@ import { cn } from "@/lib/utils";
 import BrandLogo from "./brand-logo";
 import InstagramIcon from "./icons/instagram";
 import YoutubeIcon from "./icons/youtube";
+import { Separator } from "./ui/separator";
 
 export default function Footer({ className = "" }: { className?: string }) {
   return (
     <footer
       className={cn(
-        "border-primary-100 container border-t py-4 font-sans text-primary",
+        "container-wrapper w-full space-y-4 px-0 font-sans text-primary",
         className
       )}
     >
-      <div className="mx-auto grid grid-cols-12 items-start gap-4 md:grid-cols-3">
+      <Separator />
+      <div className="container mx-auto grid grid-cols-12 items-start gap-4 md:grid-cols-3">
         <div className="col-span-full flex flex-col items-center gap-2 md:col-span-2 md:flex-row">
           <BrandLogo size={120} onFooter />
           <div>

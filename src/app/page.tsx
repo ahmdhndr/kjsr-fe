@@ -10,14 +10,14 @@ import EventList from "./events/components/event-list";
 
 export default function Home() {
   return (
-    <div className="space-y-4">
+    <div className="container mb-4 mt-4 space-y-4 md:mt-0">
       <section className="grid h-[calc(100vh-56px)] grid-cols-2 items-center gap-4">
         <div className="col-span-full flex h-full flex-col justify-center md:col-span-1">
           <div className="mb-4">
             {/* <h1 className="text-balance text-lg font-semibold md:text-xl">
               Klub Jantung Sehat Remaja Indonesia
             </h1> */}
-            <h2 className="text-balance text-3xl font-bold tracking-tight md:text-5xl">
+            <h2 className="text-balance text-3xl font-bold tracking-tight md:text-5xl lg:text-6xl">
               {/* We Are The Future! */}
               Remaja Sehat, Bangsa Kuat.
             </h2>
@@ -29,7 +29,7 @@ export default function Home() {
             <span className="font-semibold">
               sehat, produktif, dan inspiratif
             </span>
-            . Bersama kami, pelajari gaya hidup sehat dan{" "}
+            . Mari pelajari gaya hidup sehat dan{" "}
             <span className="font-semibold">jadilah pelopor perubahan!</span>
           </p>
           <div className="mt-4">
@@ -67,7 +67,7 @@ export default function Home() {
         </Link>
       </section>
 
-      <section className="space-y-4">
+      <section className="mb-4 space-y-4">
         <div className="w-fit space-y-1">
           <h3 className="text-lg font-semibold capitalize md:text-2xl">
             Wilayah KJSR
