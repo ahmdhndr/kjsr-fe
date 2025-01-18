@@ -16,32 +16,38 @@ import { EventDTO } from "../dtos/events";
 
 export function EventItem({
   title,
+  slug,
   excerpt,
   author,
-  imageUrl,
+  image_url,
   category,
   events_date,
 }: EventDTO) {
   return (
     <Card className="overflow-hidden text-primary shadow-lg">
       <CardHeader className="p-0">
-        <Image
-          src={imageUrl}
-          alt={title}
-          width={1280}
-          height={720}
-          quality={90}
-          placeholder="blur"
-          blurDataURL={blurDataURL}
-          className="block aspect-video h-full object-cover object-center"
-        />
+        <Link href={`/events/${slug}`}>
+          <Image
+            src={image_url}
+            alt={title}
+            width={1280}
+            height={720}
+            quality={90}
+            placeholder="blur"
+            blurDataURL={blurDataURL}
+            className="block aspect-video h-full object-cover object-center"
+          />
+        </Link>
         <div className="!mt-0 p-4">
           <CardTitle className="line-clamp-2 max-h-12 overflow-hidden">
-            <Link href={"/"} className="hover:underline">
+            <Link
+              href={`/events/${slug}`}
+              className="inline-block hover:underline"
+            >
               {title}
             </Link>
           </CardTitle>
-          <CardDescription className="text-primary">
+          <CardDescription className="mt-1 text-primary">
             <span className="text-muted-foreground">oleh: </span>
             {author}
           </CardDescription>

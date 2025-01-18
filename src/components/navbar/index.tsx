@@ -18,7 +18,7 @@ export function Navbar() {
         <div className="container-wrapper">
           <div className="container flex h-14 items-center gap-2">
             <NavbarMobile />
-            <div className="mr-4 hidden md:flex">
+            <div className="mr-4 hidden lg:flex">
               <BrandLogo />
 
               <nav className="flex items-center gap-4 text-sm xl:gap-6">
@@ -44,8 +44,8 @@ export function Navbar() {
                 ))}
               </nav>
             </div>
-            <div className="flex flex-1 items-center justify-between gap-2 md:justify-end">
-              <div className="block md:hidden">
+            <div className="flex flex-1 items-center justify-between gap-2 lg:justify-end">
+              <div className="block lg:hidden">
                 <BrandLogo />
               </div>
               {/* <nav className="flex items-center gap-2">

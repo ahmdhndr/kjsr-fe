@@ -28,7 +28,7 @@ export default function NavbarMobile() {
 
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
-      <SheetTrigger className="md:hidden">
+      <SheetTrigger className="lg:hidden">
         <Menu className="text-primary" />
       </SheetTrigger>
       <SheetContent>

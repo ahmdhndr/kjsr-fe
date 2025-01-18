@@ -1,17 +1,6 @@
 export const regions = [
   {
     id: 1,
-    name: "KJSR Sumsel",
-    members: 20,
-    image_banner_url: "/images/region/default.jpg",
-    chairman: "John Doe",
-    contact: "082112344321",
-    email_org: "kjsrsumsel@gmail.com",
-    address:
-      "Lrg. Asrama Putra, Sekip Jaya, Kec. Kemuning, Kota Palembang, Sumatera Selatan 30114",
-  },
-  {
-    id: 2,
     name: "KJSR DKI Jakarta",
     members: 20,
     image_banner_url: "/images/region/default.jpg",
@@ -20,6 +9,17 @@ export const regions = [
     email_org: "kjsrdkijakarta@gmail.com",
     address:
       "Jl. Teuku Umar No.8, RT.1/RW.1, Gondangdia, Kec. Menteng, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10350",
+  },
+  {
+    id: 2,
+    name: "KJSR Sumsel",
+    members: 20,
+    image_banner_url: "/images/region/default.jpg",
+    chairman: "John Doe",
+    contact: "082112344321",
+    email_org: "kjsrsumsel@gmail.com",
+    address:
+      "Lrg. Asrama Putra, Sekip Jaya, Kec. Kemuning, Kota Palembang, Sumatera Selatan 30114",
   },
   {
     id: 3,

@@ -1,24 +1,22 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Plus_Jakarta_Sans } from "next/font/google";
-import { Suspense } from "react";
 
 import Footer from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 import { siteConfig } from "@/config/site-config";
 
 import "./globals.css";
-import Loader from "./loader";
 
 const jakartaSans = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -82,17 +80,15 @@ export default function RootLayout({
       <body
         className={`${jakartaSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Suspense fallback={<Loader />}>
-          <div className="flex min-h-screen flex-col">
-            <Navbar />
-            <section className="container relative mb-4 flex-1 font-sans !text-primary">
-              <main className="mx-auto w-full max-w-[1200px] selection:bg-primary selection:text-background">
-                {children}
-              </main>
-            </section>
-            <Footer />
-          </div>
-        </Suspense>
+        <div className="flex min-h-screen flex-col">
+          <Navbar />
+          <section className="relative flex-1">
+            <main className="mx-auto w-full font-sans font-light !text-primary selection:bg-primary selection:text-background">
+              {children}
+            </main>
+          </section>
+          <Footer />
+        </div>
       </body>
     </html>
   );
