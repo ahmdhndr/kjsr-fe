@@ -12,7 +12,13 @@ import ImageResize from "tiptap-extension-resize-image";
 
 import Toolbar from "./toolbar";
 
-export default function RichTextEditor({ content, onChange }) {
+export default function RichTextEditor({
+  content,
+  onChange,
+}: {
+  content: string;
+  onChange: (html: string) => void;
+}) {
   const editor = useEditor({
     immediatelyRender: false,
     extensions: [

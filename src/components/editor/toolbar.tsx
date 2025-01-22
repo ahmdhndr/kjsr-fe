@@ -19,8 +19,31 @@ import {
 
 import { Toggle } from "../ui/toggle";
 
-export default function Toolbar({ editor }) {
-  if (!editor) return null;
+interface Editor {
+  chain: () => {
+    focus: () => Editor;
+    toggleHeading: (args: { level: number }) => Editor;
+    toggleBold: () => Editor;
+    toggleItalic: () => Editor;
+    toggleStrike: () => Editor;
+    setTextAlign: (alignment: string) => Editor;
+    toggleBulletList: () => Editor;
+    toggleOrderedList: () => Editor;
+    toggleCodeBlock: () => Editor;
+    toggleHighlight: () => Editor;
+    setImage: (args: { src: string }) => Editor;
+    run: () => void;
+  };
+  isActive: (type: string, options?: Record<string, unknown>) => boolean;
+}
+
+interface ToolbarProps {
+  editor?: Editor;
+}
+
+export default function Toolbar({ editor }: ToolbarProps) {
+  if (!editor) return undefined;
+
   const addImage = () => {
     const url = window.prompt("URL");
     if (url) {

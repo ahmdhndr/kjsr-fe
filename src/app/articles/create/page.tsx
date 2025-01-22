@@ -15,7 +15,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 
-function extractTextFromHTML(html) {
+function extractTextFromHTML(html: string): string {
   const parser = new DOMParser();
   const doc = parser.parseFromString(html, "text/html");
   return doc.body.textContent?.trim() || "";
@@ -23,8 +23,8 @@ function extractTextFromHTML(html) {
 
 const formSchema = z.object({
   post: z.string().refine(
-    (value) => {
-      return extractTextFromHTML(value).trim().length >= 5;
+    (value: string) => {
+      return extractTextFromHTML(value).length >= 5;
     },
     {
       message: "The text must be at least 5 characters long after trimming",
@@ -41,7 +41,7 @@ export default function CreateArticlePage() {
     },
   });
 
-  const onSubmit = (data) => {
+  const onSubmit = (data: { post: string }) => {
     console.log(data);
   };
 
@@ -58,14 +58,16 @@ export default function CreateArticlePage() {
                 <FormControl>
                   <RichTextEditor
                     content={field.value}
-                    onChange={(value) => field.onChange(value)}
+                    onChange={(value: string) => field.onChange(value)}
                   />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
-          <Button className="mt-4">Submit</Button>
+          <Button type="submit" className="mt-4">
+            Submit
+          </Button>
         </form>
       </Form>
     </div>
