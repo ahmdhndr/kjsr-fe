@@ -6,7 +6,6 @@ import DetailEvent from "./detail-event";
 
 type Props = {
   params: Promise<{ slug: string }>;
-  searchParams?: { [key: string]: string | string[] | undefined };
 };
 
 export async function generateMetadata(
