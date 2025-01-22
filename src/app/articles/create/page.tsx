@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
-import RichTextEditor from "@/components/editor";
+// import RichTextEditor from "@/components/editor";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -14,6 +14,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 
 function extractTextFromHTML(html: string): string {
   const parser = new DOMParser();
@@ -54,12 +55,9 @@ export default function CreateArticlePage() {
             name="post"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Post</FormLabel>
+                <FormLabel>Test</FormLabel>
                 <FormControl>
-                  <RichTextEditor
-                    content={field.value}
-                    onChange={(value: string) => field.onChange(value)}
-                  />
+                  <Input placeholder="tes" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
