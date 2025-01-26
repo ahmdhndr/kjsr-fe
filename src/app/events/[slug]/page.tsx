@@ -1,5 +1,4 @@
-import { ResolvingMetadata } from "next";
-
+// import { ResolvingMetadata } from "next";
 import { events } from "@/data/events";
 
 import DetailEvent from "./detail-event";
@@ -9,8 +8,8 @@ type Props = {
 };
 
 export async function generateMetadata(
-  { params }: Props,
-  parent: ResolvingMetadata
+  { params }: Props
+  // parent: ResolvingMetadata
 ) {
   const { slug } = await params;
   const event = events.find((event) => event.slug === slug);
@@ -23,20 +22,20 @@ export async function generateMetadata(
   }
 
   // optionally access and extend (rather than replace) parent metadata
-  const previousImages = (await parent).openGraph?.images || [];
+  // const previousImages = (await parent).openGraph?.images || [];
 
   return {
     title: event.title,
     description: event.excerpt,
     openGraph: {
       url: `events/${event.slug}`,
-      images: [event.image_url, ...previousImages],
+      images: [event.image_url],
     },
     twitter: {
       card: "summary_large_image",
       title: event.title,
       description: event.excerpt,
-      images: [event.image_url, ...previousImages],
+      images: [event.image_url],
     },
   };
 }

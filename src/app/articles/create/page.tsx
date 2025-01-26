@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 
 // import RichTextEditor from "@/components/editor";
+import RichTextEditor from "@/components/rich-text-editor";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -14,7 +15,6 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
 
 function extractTextFromHTML(html: string): string {
   const parser = new DOMParser();
@@ -23,7 +23,12 @@ function extractTextFromHTML(html: string): string {
 }
 
 const formSchema = z.object({
-  post: z.string().refine(
+  title: z.string(),
+  author: z.string(),
+  slug: z.string(),
+  excerpt: z.string(),
+  category: z.string(),
+  content: z.string().refine(
     (value: string) => {
       return extractTextFromHTML(value).length >= 5;
     },
@@ -31,6 +36,8 @@ const formSchema = z.object({
       message: "The text must be at least 5 characters long after trimming",
     }
   ),
+  created_at: z.date(),
+  updated_at: z.date(),
 });
 
 export default function CreateArticlePage() {
@@ -38,11 +45,12 @@ export default function CreateArticlePage() {
     mode: "onTouched",
     resolver: zodResolver(formSchema),
     defaultValues: {
-      post: "",
+      title: "",
+      content: "",
     },
   });
 
-  const onSubmit = (data: { post: string }) => {
+  const onSubmit = (data: { content: string }) => {
     console.log(data);
   };
 
@@ -52,12 +60,13 @@ export default function CreateArticlePage() {
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <FormField
             control={form.control}
-            name="post"
+            name="content"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Test</FormLabel>
+                <FormLabel>Content</FormLabel>
                 <FormControl>
-                  <Input placeholder="tes" {...field} />
+                  {/* <Input placeholder="tes" {...field} /> */}
+                  <RichTextEditor content={field.value} {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>

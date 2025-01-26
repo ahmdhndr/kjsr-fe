@@ -1,5 +1,12 @@
-export const articles = [
+import { ArticleDTO } from "@/app/articles/dtos/articles";
+
+export const articles: ArticleDTO[] = [
   {
+    id: 1,
+    title: "Artikel Pertama",
+    slug: "artikel-pertama",
+    excerpt: "Deskripsi singkat tentang artikel",
+    author: "",
     content: `
       <h3 class="text-primary fw-bold lato-bold mb-3">Jangan Lupakan Peradangan Kronis sebagai Penyebab Penyakit Jantung</h3>
       <p class="MsoNormal" style="text-align:justify">Ketika kita membahas penyakit
@@ -11,5 +18,8 @@ yang bisa mengacaukan jantung dan pembuluh darah secara perlahan tapi pasti.
 Bayangkan seperti api kecil di pojokan, dibiarkan menyala, lama-lama bisa
 membakar seluruh rumah!</p>
     `,
+    category: "bebas",
+    created_at: new Date(),
+    updated_at: new Date(),
   },
 ];

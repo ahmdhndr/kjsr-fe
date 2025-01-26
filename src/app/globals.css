@@ -127,17 +127,10 @@ body {
   }
 }
 
-/* Editor Toolbar */
-button {
-  @apply rounded p-2 transition-colors hover:bg-gray-100;
-}
-
-/* Active Buttons */
-button.active {
-  @apply bg-gray-200;
-}
-
-/* Editor Content */
-.editor-content {
-  @apply rounded border bg-white p-4 text-gray-800;
+.tiptap p.is-editor-empty:first-child::before {
+  color: var(--primary);
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
 }
