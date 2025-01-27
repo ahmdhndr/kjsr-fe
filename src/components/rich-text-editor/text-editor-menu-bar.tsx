@@ -112,7 +112,7 @@ export default function TextEditorMenuBar({
   ];
 
   return (
-    <div className="mb-2 flex flex-wrap gap-1">
+    <div className="sticky top-20 z-10 mb-2 flex flex-wrap gap-1 rounded-md border border-primary bg-background/95 p-1 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       {buttons.map(({ icon, onClick, isActive, disabled }, index) => (
         <ToolbarButton
           key={index}

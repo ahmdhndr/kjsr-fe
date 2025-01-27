@@ -5,6 +5,7 @@ export const articles: ArticleDTO[] = [
     id: 1,
     title: "Artikel Pertama",
     slug: "artikel-pertama",
+    image_url: "",
     excerpt: "Deskripsi singkat tentang artikel",
     author: "",
     content: `

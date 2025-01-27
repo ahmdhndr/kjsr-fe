@@ -6,6 +6,9 @@ export const envServer = createEnv({
     NODE_ENV: z
       .enum(["development", "test", "production"])
       .default("development"),
+    UPLOADTHING_TOKEN: z.string(),
+    // CLOUDFLARE_IMAGES_API_TOKEN: z.string(),
+    // CLOUDFLARE_ACCOUNT_ID: z.string(),
   },
   /**
    * Makes it so that empty strings are treated as undefined.

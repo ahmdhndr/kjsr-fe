@@ -3,6 +3,7 @@ import { Geist_Mono, Plus_Jakarta_Sans } from "next/font/google";
 
 import Footer from "@/components/footer";
 import { Navbar } from "@/components/navbar";
+import { Toaster } from "@/components/ui/sonner";
 import { siteConfig } from "@/config/site-config";
 
 import "./globals.css";
@@ -89,6 +90,7 @@ export default function RootLayout({
           </section>
           <Footer />
         </div>
+        <Toaster />
       </body>
     </html>
   );
