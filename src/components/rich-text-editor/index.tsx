@@ -34,7 +34,7 @@ export default function RichTextEditor({ content, onChange }: Props) {
     editorProps: {
       attributes: {
         class:
-          "p-4 border rounded-md border-primary max-w-full min-h-[150px] ring-offset-primary prose-heading:text-primary focus-within:outline-none focus-within:ring-1 focus-within:ring-ring cursor-text prose prose-sm sm:prose-base",
+          "p-4 border rounded-md border-primary max-w-full min-h-[150px] max-h-[450px] overflow-y-auto cursor-text prose prose-sm ring-offset-primary prose-hedings:text-primary focus-within:outline-none focus-within:ring-1 focus-within:ring-ring sm:prose-base",
       },
     },
     onUpdate: ({ editor }) => {

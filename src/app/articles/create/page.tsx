@@ -15,6 +15,9 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+
+import ImageUploader from "./image-uploader";
 
 function extractTextFromHTML(html: string): string {
   const parser = new DOMParser();
@@ -24,10 +27,11 @@ function extractTextFromHTML(html: string): string {
 
 const formSchema = z.object({
   title: z.string(),
-  author: z.string(),
-  slug: z.string(),
-  excerpt: z.string(),
-  category: z.string(),
+  // author: z.string(),
+  // image_url: z.string(),
+  // slug: z.string(),
+  // excerpt: z.string(),
+  // category: z.string(),
   content: z.string().refine(
     (value: string) => {
       return extractTextFromHTML(value).length >= 5;
@@ -36,8 +40,8 @@ const formSchema = z.object({
       message: "The text must be at least 5 characters long after trimming",
     }
   ),
-  created_at: z.date(),
-  updated_at: z.date(),
+  // created_at: z.date(),
+  // updated_at: z.date(),
 });
 
 export default function CreateArticlePage() {
@@ -50,14 +54,28 @@ export default function CreateArticlePage() {
     },
   });
 
-  const onSubmit = (data: { content: string }) => {
+  const onSubmit = (data: { title: string; content: string }) => {
     console.log(data);
   };
 
   return (
-    <div className="container mx-auto max-w-3xl py-5">
+    <div className="container mx-auto max-w-3xl space-y-2 py-5">
+      <ImageUploader />
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)}>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
+          <FormField
+            control={form.control}
+            name="title"
+            render={({ field }) => (
+              <FormItem className="focus-within:outline-none">
+                <FormLabel>Title</FormLabel>
+                <FormControl className="border border-primary focus-within:outline-none focus-within:ring-1 focus-within:ring-ring">
+                  <Input className="" placeholder="Title..." {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
           <FormField
             control={form.control}
             name="content"
@@ -65,16 +83,13 @@ export default function CreateArticlePage() {
               <FormItem>
                 <FormLabel>Content</FormLabel>
                 <FormControl>
-                  {/* <Input placeholder="tes" {...field} /> */}
                   <RichTextEditor content={field.value} {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
-          <Button type="submit" className="mt-4">
-            Submit
-          </Button>
+          <Button type="submit">Submit</Button>
         </form>
       </Form>
     </div>
