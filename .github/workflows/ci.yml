@@ -1,47 +1,47 @@
-name: Check PR
+name: Code Check
 
 on: [pull_request]
 
 jobs:
   run-ci:
-    name: Run Type Check & Linters
+    name: ⬣ ESLint, ʦ TypeScript, & 💅 Prettier
     runs-on: ubuntu-latest
     permissions:
       contents: read
       pull-requests: read
 
     steps:
-      - name: Checkout repository
+      - name: ⬇️ Checkout repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Install pnpm
+      - name: 🤌 Setup pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 9
           run_install: false
 
-      - name: Set up Node
+      - name: ⎔ Setup node
         uses: actions/setup-node@v4
         with:
           node-version: lts/*
 
-      - name: Setup pnpm config
+      - name: ⎔ Setup pnpm config
         shell: bash
         run: pnpm config set store-dir ~/.pnpm-store
 
-      - name: Install dependencies
+      - name: 📥 Install dependencies
         run: pnpm install
 
-      - name: Check types
+      - name: 🔎 Check types
         run: pnpm type-check
 
-      - name: Check Prettier
+      - name: 💅 Check Prettier
         run: pnpm format:ci
 
-      - name: Check linting
+      - name: ⬣ Check linting
         run: pnpm lint
 
-      - name: Check commits messages
+      - name: ⎔ Check commits messages
         uses: wagoid/commitlint-github-action@v6
