@@ -38,3 +38,5 @@ yarn-error.log*
 next-env.d.ts
 tailwind.config.ts
 next.config*
+.github/
+drizzle.config*
