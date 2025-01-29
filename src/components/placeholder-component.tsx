@@ -7,8 +7,8 @@ interface Props {
 }
 
 export default function PlaceholderComponent({
-  heading = "Heading",
-  subHeading = "Subheading",
+  heading = "",
+  subHeading = "",
   children,
 }: Props) {
   return (
