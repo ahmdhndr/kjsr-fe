@@ -22,12 +22,9 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         },
       },
     }),
-    // Resend({
-    //   apiKey: envServer.AUTH_RESEND_KEY,
-    //   from: envServer.EMAIL_FROM,
-    //   sendVerificationRequest: (params) => {
-    //     console.log(params);
-    //   },
-    // })
   ],
+  pages: {
+    verifyRequest: "/auth/verify-request",
+    error: "/auth/error",
+  },
 });
