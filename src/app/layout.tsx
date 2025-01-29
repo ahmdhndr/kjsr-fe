@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Plus_Jakarta_Sans } from "next/font/google";
+import { Suspense } from "react";
+
+import { SessionProvider } from "next-auth/react";
 
 import Footer from "@/components/footer";
 import { Navbar } from "@/components/navbar";
@@ -7,6 +10,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { siteConfig } from "@/config/site-config";
 
 import "./globals.css";
+import Loader from "./loader";
 
 const jakartaSans = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -81,15 +85,19 @@ export default function RootLayout({
       <body
         className={`${jakartaSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="flex min-h-screen flex-col">
-          <Navbar />
-          <section className="relative flex-1">
-            <main className="mx-auto w-full font-sans font-light !text-primary selection:bg-primary selection:text-background">
-              {children}
-            </main>
-          </section>
-          <Footer />
-        </div>
+        <SessionProvider>
+          <Suspense fallback={<Loader />}>
+            <div className="flex min-h-screen flex-col">
+              <Navbar />
+              <section className="relative flex-1">
+                <main className="mx-auto w-full font-sans font-light !text-primary selection:bg-primary selection:text-background">
+                  {children}
+                </main>
+              </section>
+              <Footer />
+            </div>
+          </Suspense>
+        </SessionProvider>
         <Toaster />
       </body>
     </html>

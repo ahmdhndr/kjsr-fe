@@ -6,9 +6,10 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { regions } from "@/data/regions";
 
+import ArticleList from "./articles/components/article-list";
 import EventList from "./events/components/event-list";
 
-export default function Home() {
+export default async function Home() {
   return (
     <div className="container mb-4 mt-4 space-y-4 md:mt-0">
       <section className="grid h-[calc(100vh-56px)] grid-cols-2 items-center gap-4">
@@ -48,7 +49,7 @@ export default function Home() {
           </h3>
           <Separator className="h-0.5 bg-primary" />
         </div>
-        <EventList />
+        <EventList sliceStart={0} sliceEnd={3} />
         <Link href={"#"} className="inline-block">
           <Button>Lihat Semua</Button>
         </Link>
@@ -61,7 +62,7 @@ export default function Home() {
           </h3>
           <Separator className="h-0.5 bg-primary" />
         </div>
-        <EventList />
+        <ArticleList />
         <Link href={"#"} className="inline-block">
           <Button>Lihat Semua</Button>
         </Link>
@@ -83,6 +84,9 @@ export default function Home() {
           <Button>Lihat Semua</Button>
         </Link>
       </section>
+
+      {/* Template Email Magic Links */}
+      <div></div>
     </div>
   );
 }

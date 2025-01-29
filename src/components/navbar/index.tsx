@@ -2,15 +2,30 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
+
+import { useSession } from "next-auth/react";
 
 import BrandLogo from "@/components/brand-logo";
 import { menus } from "@/data/menus";
 import { cn } from "@/lib/utils";
 
+import AuthModal from "../auth-modal";
+import { Button } from "../ui/button";
 import NavbarMobile from "./navbar-mobile";
+import { ProfileMenu } from "./profile-menu";
 
 export function Navbar() {
   const pathname = usePathname();
+  const [openAuthModal, setOpenAuthModal] = useState(false);
+  // const [openMenuMobile, setOpenMenuMobile] = useState(false);
+  const session = useSession();
+
+  if (!session) return null;
+
+  const onClickLogin = () => {
+    setOpenAuthModal(true);
+  };
 
   return (
     <>
@@ -48,19 +63,27 @@ export function Navbar() {
               <div className="block lg:hidden">
                 <BrandLogo />
               </div>
-              {/* <nav className="flex items-center gap-2">
-                <Button
-                  variant={"ghost"}
-                  className="text-muted-foreground"
-                  onClick={onClickLogin}
-                >
-                  Sign In
-                </Button>
-              </nav> */}
+              <nav className="flex items-center gap-2">
+                {session.status === "authenticated" && <ProfileMenu />}
+                {session.status === "unauthenticated" && (
+                  <Button
+                    variant={"ghost"}
+                    className="text-primary transition-colors hover:bg-primary hover:text-background"
+                    onClick={onClickLogin}
+                  >
+                    Masuk
+                  </Button>
+                )}
+              </nav>
             </div>
           </div>
         </div>
       </header>
+
+      <AuthModal
+        open={openAuthModal}
+        onOpenChange={() => setOpenAuthModal(false)}
+      />
     </>
   );
 }

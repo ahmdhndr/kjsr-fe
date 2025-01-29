@@ -1,5 +1,9 @@
-import UnderConstructionPage from "@/components/under-construction";
+import EventList from "./components/event-list";
 
 export default function EventPage() {
-  return <UnderConstructionPage />;
+  return (
+    <div className="container py-4">
+      <EventList />
+    </div>
+  );
 }
